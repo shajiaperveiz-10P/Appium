@@ -1,0 +1,11 @@
+package base;
+import org.openqa.selenium.WebDriver;
+public class appDriver {
+        private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+        public static WebDriver getDriver() {
+            return getDriver();
+        }
+ public static void setDriver (WebDriver Driver) {
+        driver.set(Driver);
+        }
+}

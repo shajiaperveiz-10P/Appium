@@ -63,6 +63,7 @@ public class configFileReader {
         if (getappiumServerURL != null) return getappiumServerURL;
         else throw new RuntimeException("appium server not found");
     }
+
 }
 
 
