@@ -24,7 +24,7 @@ public class baseTest {
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME,ConfigFileReader.getplatformName());
         cap.setCapability(MobileCapabilityType.TIMEOUTS, 10000);
         cap.setCapability(MobileCapabilityType.APP,ConfigFileReader.getapp());
-        URL url = new URL(ConfigFileReader.getappiumServerURL());
+        URL url = new URL(ConfigFileReader.getappiumServerPath());
         driver = new AppiumDriver(url, cap);
     }
 }

@@ -13,13 +13,16 @@ public class signUpTest {
 
    @BeforeTest
     public void setup() throws MalformedURLException {
-        factory=new appFactory();
-        page=new SignUpPage();
-        appFactory.initialize();
+       factory = new appFactory();
+       appFactory.initialize();
+       page = new SignUpPage();
+
         }
     @Test
-    public void createAccount() {
-        page.continue_email_btn();
+    public void createAccount() throws InterruptedException {
+        Thread.sleep(1000);
+        page.clickOkBtn();
+        page.clickContButton();
         page.enterEmail();
         page.enterPass();
 

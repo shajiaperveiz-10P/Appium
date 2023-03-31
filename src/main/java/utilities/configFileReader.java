@@ -7,63 +7,69 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class configFileReader {
-    private Properties properties;
-    private final String propertyFile = "configurations//config.properties";
 
-    public configFileReader() {
+    private Properties properties;
+
+    public configFileReader(){
         BufferedReader reader;
         try {
+            String propertyFile = "configurations/config.properties";
             reader = new BufferedReader(new FileReader(propertyFile));
             properties = new Properties();
             try {
                 properties.load(reader);
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
 
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
 
+    }
 
-    public String getdeviceName() {
+
+
+    public String getdeviceName(){
         String getdeviceName = properties.getProperty("deviceName");
-        if (getdeviceName != null) return getdeviceName;
+        if (getdeviceName != null) return  getdeviceName;
         else throw new RuntimeException("device name not found");
-    }
 
-    public String getplatformName() {
+    }
+    public String getplatformName(){
         String getplatformName = properties.getProperty("platformName");
-        if (getplatformName != null) return getplatformName;
+        if (getplatformName != null) return  getplatformName;
         else throw new RuntimeException("platform name not found");
-    }
 
-    public String getplatformVersion() {
+    }
+    public String getplatformVersion(){
         String getplatformVersion = properties.getProperty("platformVersion");
-        if (getplatformVersion != null) return getplatformVersion;
+        if (getplatformVersion != null) return  getplatformVersion;
         else throw new RuntimeException("platform version name not found");
-    }
 
-    public String getautomationName() {
+    }
+    public String getautomationName(){
         String getautomationName = properties.getProperty("automationName");
-        if (getautomationName != null) return getautomationName;
+        if (getautomationName!= null) return  getautomationName;
         else throw new RuntimeException("automation name not found");
-    }
 
-    public String getapp() {
+    }
+    public String getapp(){
         String getapp = properties.getProperty("app");
-        if (getapp != null) return getapp;
+        if (getapp != null) return  getapp;
         else throw new RuntimeException("App name not found");
+
+    }
+    public String getappiumServerPath() {
+        String appiumServerPath = properties.getProperty("appiumServerPath");
+        if (appiumServerPath != null) return appiumServerPath;
+        else throw new RuntimeException("url not specified in the Configuration.properties file.");
     }
 
-    public String getappiumServerURL() {
-        String getappiumServerURL = properties.getProperty("appiumServerURL");
-        if (getappiumServerURL != null) return getappiumServerURL;
-        else throw new RuntimeException("appium server not found");
-    }
 
 }
+
+
+
 
 
