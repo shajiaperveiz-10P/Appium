@@ -60,10 +60,17 @@ public class configFileReader {
         else throw new RuntimeException("App name not found");
 
     }
+
     public String getappiumServerPath() {
         String appiumServerPath = properties.getProperty("appiumServerPath");
         if (appiumServerPath != null) return appiumServerPath;
         else throw new RuntimeException("url not specified in the Configuration.properties file.");
+    }
+
+    public String getExcelPath() {
+        String deviceName = properties.getProperty("excelPath");
+        if (deviceName!= null) return deviceName;
+        else throw new RuntimeException("excel file not found");
     }
 
 

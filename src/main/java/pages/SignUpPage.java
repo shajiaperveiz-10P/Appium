@@ -59,14 +59,14 @@ public class SignUpPage {
         createAccount.click();
     }
 
-    public void enterEmail(){
-        emailAddress.sendKeys("Tester4@gmail.com");
+    public void enterEmail(String email){
+        emailAddress.sendKeys(email);
     }
     public void clickContButton(){
         continue_Btn.click();
     }
-    public void enterPass(){
-        password.sendKeys("Testing@1234");
+    public void enterPass(String pass){
+        password.sendKeys(pass);
     }
 
     public void enterConfirmPass(){
